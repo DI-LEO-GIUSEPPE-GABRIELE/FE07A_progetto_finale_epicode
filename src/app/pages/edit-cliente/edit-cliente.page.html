@@ -159,14 +159,14 @@
     </div>
     <div class="form-group mb-2">
       <label for="ComuneSedeOperativa">Comune</label>
-      <select ngModel [(ngModel)]="cliente.indirizzoSedeOperativa.comune" class="form-select" id="ComuneSedeOperativa" name="ComuneSedeOperativa" required>
-        <option *ngFor="let comune of comuni" selected value="ComuneSedeOperativa">{{comune.nome}}</option>
+      <select ngModel [(ngModel)]="cliente.indirizzoSedeOperativa.comune.nome" class="form-select" id="ComuneSedeOperativa" name="ComuneSedeOperativa" required>
+        <option *ngFor="let comune of comuni" value="{{comune.nome}}">{{comune.nome}}</option>
       </select>
     </div>
     <div class="form-group mb-2">
       <label for="provinciaSedeOperativa">Provincia</label>
-      <select ngModel [(ngModel)]="cliente.indirizzoSedeOperativa.comune.provincia" class="form-select" id="provinciaSedeOperativa" name="provinciaSedeOperativa" required>
-        <option *ngFor="let provincia of province" selected value="provinciaSedeOperativa">{{provincia.nome}}</option>
+      <select ngModel [(ngModel)]="cliente.indirizzoSedeOperativa.comune.provincia.nome" class="form-select" id="provinciaSedeOperativa" name="provinciaSedeOperativa" required>
+        <option *ngFor="let provincia of province" value="{{provincia.nome}}">{{provincia.nome}}</option>
       </select>
     </div>
     <div class="form-group mb-2">
@@ -210,14 +210,14 @@
     </div>
     <div class="form-group mb-2">
       <label for="comuneSedeLegale">Comune</label>
-      <select ngModel  [(ngModel)]="cliente.indirizzoSedeLegale.comune" class="form-select" id="comuneSedeLegale" name="comuneSedeLegale" required>
-        <option *ngFor="let comune of comuni" value="comuneSedeLegale">{{comune.nome}}</option>
+      <select ngModel  [(ngModel)]="cliente.indirizzoSedeLegale.comune.nome" class="form-select" id="comuneSedeLegale" name="comuneSedeLegale" required>
+        <option *ngFor="let comune of comuni" value="{{comune.nome}}">{{comune.nome}}</option>
       </select>
     </div>
     <div class="form-group mb-2">
       <label for="provinciaSedeLegale">Provincia</label>
       <select ngModel  [(ngModel)]="cliente.indirizzoSedeLegale.comune.provincia.nome" class="form-select" id="provinciaSedeLegale" name="provinciaSedeLegale" required >
-        <option *ngFor="let provincia of province" value="provinciaSedeLegale">{{provincia.nome}}</option>
+        <option *ngFor="let provincia of province" value="{{provincia.nome}}">{{provincia.nome}}</option>
       </select>
     </div>
       <button class="btn btn-primary mt-3" [disabled]="form.invalid" [disabled]="isLoading" type="submit">

@@ -19,17 +19,18 @@ export class EditClientePage implements OnInit {
   authSrv: any;
   sub!: Subscription;
   tipoClienti = [];
-  province!: Province[];
-  comuni!: Comuni[];
+  province: Province[] | undefined;
+  comuni: Comuni[] | undefined;
 
   constructor(private clSrv: ClientiService, private detClSrv: DettagliClienteService, private router: Router, private actRoute: ActivatedRoute) {}
 
-  ngOnInit() {
-     this.sub = this.actRoute.params.subscribe((params: Params) => {
+  ngOnInit(): void {
+      this.sub = this.actRoute.params.subscribe((params: Params) => {
         const id = +parseInt(params['id']);
         this.detClSrv.getCliente(id).subscribe(res => {
           this.cliente = res;
         });
+        console.log(params['id']);
       });
       setTimeout(() => {
         this.clSrv.getComuni().subscribe((res) => {
@@ -39,25 +40,23 @@ export class EditClientePage implements OnInit {
           this.province = res.content;
         });
       }, 2000);
-
   }
-
 
   async onsubmit(form: NgForm, id:number) {
     this.isLoading = true;
-    let comuneSedeOperativa: Comuni;
-    let comuneSedeLegale: Comuni;
-    let provinciaSedeOperativa: Province;
-    let provinciaSedeLegale: Province;
+    let comuneSedeOperativa!: Comuni;
+    let comuneSedeLegale!: Comuni;
+    let provinciaSedeOperativa!: Province;
+    let provinciaSedeLegale!: Province;
 
-      for (let i of this.comuni!) {
-        if (form.value.comuneSedeLegale == i.nome) {
-          comuneSedeLegale = i;
-        }
-        if (form.value.ComuneSedeOperativa == i.nome) {
-          comuneSedeOperativa = i;
-        }
+    for (let i of this.comuni!) {
+      if (form.value.comuneSedeLegale == i.nome) {
+        comuneSedeLegale = i;
       }
+      if (form.value.ComuneSedeOperativa == i.nome) {
+        comuneSedeOperativa = i;
+      }
+    }
 
     for (let i of this.province!) {
       if (form.value.provinciaSedeLegale == i.nome) {
@@ -100,8 +99,8 @@ export class EditClientePage implements OnInit {
             "cap": "${form.value.capSedeLegale}",
             "localita": "${form.value.localitaSedeLegale}",
             "comune": {
-              "id": ${form.value.comuneSedeLegale!.id},
-              "nome": "${form.value.comuneSedeLegale!.nome}",
+              "id": ${comuneSedeLegale!.id},
+              "nome": "${comuneSedeLegale!.nome}",
               "provincia": {
                   "id": ${provinciaSedeLegale!.id},
                   "nome": "${provinciaSedeLegale!.nome}",
