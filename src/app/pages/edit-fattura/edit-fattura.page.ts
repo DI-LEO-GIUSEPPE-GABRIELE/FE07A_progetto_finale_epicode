@@ -4,8 +4,8 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Cliente } from 'src/app/models/cliente';
 import { Fattura } from 'src/app/models/fattura';
-import { DettagliFatturaService } from '../dettagli-fattura/dettagli-fattura.service';
-import { FattureService } from '../fatture/fatture.service';
+import { DettagliFatturaService } from '../../services/dettagli-fattura.service';
+import { FattureService } from '../../services/fatture.service';
 import { FatturePage } from '../fatture/fatture.page';
 @Component({
   templateUrl: './edit-fattura.page.html',

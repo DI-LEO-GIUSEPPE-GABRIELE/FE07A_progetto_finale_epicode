@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from 'src/app/models/cliente';
-import { ClientiService } from './clienti.service';
+import { ClientiService } from '../../services/clienti.service';
 @Component({
   templateUrl: './clienti.page.html',
   styleUrls: ['./clienti.page.scss'],

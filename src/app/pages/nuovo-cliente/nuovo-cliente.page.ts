@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Cliente } from 'src/app/models/cliente';
-import { ClientiService } from '../clienti/clienti.service';
+import { ClientiService } from '../../services/clienti.service';
 import { Province } from 'src/app/models/province';
 import { Comuni } from 'src/app/models/comuni';
 

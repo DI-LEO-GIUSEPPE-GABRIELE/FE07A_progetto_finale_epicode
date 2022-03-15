@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Cliente } from 'src/app/models/cliente';
-import { DettagliClienteService } from './dettagli-cliente.service';
+import { DettagliClienteService } from '../../services/dettagli-cliente.service';
 
 @Component({
   templateUrl: './dettagli-cliente.page.html',

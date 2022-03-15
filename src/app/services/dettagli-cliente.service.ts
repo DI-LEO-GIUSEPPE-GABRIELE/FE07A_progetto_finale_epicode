@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { ClientiService } from '../clienti/clienti.service';
+import { ClientiService } from './clienti.service';
 import { environment } from 'src/environments/environment';
 
 @Injectable({

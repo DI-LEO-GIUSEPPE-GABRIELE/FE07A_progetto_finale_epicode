@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Utente } from 'src/app/models/utente';
-import { UtentiService } from './utenti.service';
+import { UtentiService } from '../../services/utenti.service';
 
 @Component({
   templateUrl: './utenti.page.html',

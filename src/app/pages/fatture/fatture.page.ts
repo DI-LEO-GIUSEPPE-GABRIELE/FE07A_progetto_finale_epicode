@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Fattura } from 'src/app/models/fattura';
-import { FattureService } from './fatture.service';
+import { FattureService } from '../../services/fatture.service';
 
 @Component({
   templateUrl: './fatture.page.html',

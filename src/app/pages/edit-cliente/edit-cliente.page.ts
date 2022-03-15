@@ -3,8 +3,8 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Cliente } from 'src/app/models/cliente';
-import { ClientiService } from '../clienti/clienti.service';
-import { DettagliClienteService } from '../dettagli-cliente/dettagli-cliente.service';
+import { ClientiService } from '../../services/clienti.service';
+import { DettagliClienteService } from '../../services/dettagli-cliente.service';
 import { Province } from 'src/app/models/province';
 import { Comuni } from 'src/app/models/comuni';
 
