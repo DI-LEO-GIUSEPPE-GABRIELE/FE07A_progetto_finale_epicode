@@ -23,8 +23,8 @@ export class FattureService {
     );
   }
 
-  removeFattura(fatturaId: number) {
-    return this.http.delete(`${this.URL}/api/fatture/${fatturaId}`).subscribe();
+  removeFattura(fattura: Fattura) {
+    return this.http.delete(`${this.URL}/api/fatture/${fattura.id}`);
   }
 
   nuovaFattura(data: Fattura) {

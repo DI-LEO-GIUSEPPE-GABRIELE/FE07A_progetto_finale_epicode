@@ -33,11 +33,8 @@ export class FatturePage implements OnInit {
     this.onGetAllFatture();
   }
 
-  rimuoviFattura(idFattura: number) {
-    this.fatSrv.removeFattura(idFattura);
-    setTimeout(() => {
-      this.onGetAllFatture();
-    }, 200);
+  rimuoviFattura(fattura: Fattura) {
+    this.fatSrv.removeFattura(fattura).subscribe(response => {this.onGetAllFatture()})
   }
 
   filtra() {
