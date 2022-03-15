@@ -22,11 +22,9 @@ export interface AuthData {
 
 export class AuthService {
   URL = environment.pathApi;
-
   private authSubject = new BehaviorSubject<null|AuthData>(null);
   user$ = this.authSubject.asObservable();
   isLoggedIn$ = this.user$.pipe(map(user=>!!user));
-
   autologoutTimer:any
 
   constructor(private http: HttpClient, private router:Router) {
@@ -34,7 +32,6 @@ export class AuthService {
   }
 
   login(data: { username: string; password: string }) {
-    console.log(data);
     return this.http.post<AuthData>(`${this.URL}/api/auth/login`, data).pipe(
       tap((val) => {
       }),

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
+import { Utente } from 'src/app/models/utente';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
   isLoggedIn: boolean = false;
@@ -19,10 +20,9 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.authSrv.isLoggedIn$.subscribe((isLoggedIn) => {
       this.isLoggedIn = isLoggedIn;
+    });
+    this.authSrv.user$.subscribe((data) => {
+      this.welcomeUser = data?.user.username;
     })
-
-    // this.authSrv.user$.subscribe((data) => {
-    //   this.welcomeUser = data?.user.username;
-    // })
   }
 }
