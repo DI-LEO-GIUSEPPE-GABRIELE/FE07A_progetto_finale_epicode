@@ -30,7 +30,6 @@ export class EditClientePage implements OnInit {
         this.detClSrv.getCliente(id).subscribe(res => {
           this.cliente = res;
         });
-        console.log(params['id']);
       });
       setTimeout(() => {
         this.clSrv.getComuni().subscribe((res) => {

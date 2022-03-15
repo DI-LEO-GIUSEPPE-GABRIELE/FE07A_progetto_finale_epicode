@@ -97,8 +97,6 @@ export class NuovoClientePage implements OnInit {
         "dataInserimento": "2019-06-01T08:11:01.911+00:00",
         "dataUltimoContatto": "2021-03-24T21:32:06.375+00:00"
     }`);
-    console.log(form.value);
-    console.log(nuovoCliente);
     try {
       await this.clSrv.nuovoCliente(nuovoCliente);
       console.log(form.value);
