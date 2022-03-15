@@ -19,26 +19,29 @@ export class EditClientePage implements OnInit {
   authSrv: any;
   sub!: Subscription;
   tipoClienti = [];
-  province: Province[] | undefined;
-  comuni: Comuni[] | undefined;
+  province!: Province[];
+  comuni!: Comuni[];
 
   constructor(private clSrv: ClientiService, private detClSrv: DettagliClienteService, private router: Router, private actRoute: ActivatedRoute) {}
 
-  ngOnInit(): void {
-      this.sub = this.actRoute.params.subscribe((params: Params) => {
+  ngOnInit() {
+     this.sub = this.actRoute.params.subscribe((params: Params) => {
         const id = +parseInt(params['id']);
         this.detClSrv.getCliente(id).subscribe(res => {
           this.cliente = res;
         });
-        console.log(params['id']);
       });
-      this.clSrv.getComuni().subscribe((res) => {
-        this.comuni = res.content;
-      });
-      this.clSrv.getProvince().subscribe((res) => {
-        this.province = res.content;
-      });
+      setTimeout(() => {
+        this.clSrv.getComuni().subscribe((res) => {
+          this.comuni = res.content;
+        });
+        this.clSrv.getProvince().subscribe((res) => {
+          this.province = res.content;
+        });
+      }, 2000);
+
   }
+
 
   async onsubmit(form: NgForm, id:number) {
     this.isLoading = true;
@@ -47,14 +50,14 @@ export class EditClientePage implements OnInit {
     let provinciaSedeOperativa: Province;
     let provinciaSedeLegale: Province;
 
-    for (let i of this.comuni!) {
-      if (form.value.comuneSedeLegale == i.nome) {
-        comuneSedeLegale = i;
+      for (let i of this.comuni!) {
+        if (form.value.comuneSedeLegale == i.nome) {
+          comuneSedeLegale = i;
+        }
+        if (form.value.ComuneSedeOperativa == i.nome) {
+          comuneSedeOperativa = i;
+        }
       }
-      if (form.value.ComuneSedeOperativa == i.nome) {
-        comuneSedeOperativa = i;
-      }
-    }
 
     for (let i of this.province!) {
       if (form.value.provinciaSedeLegale == i.nome) {
@@ -97,8 +100,8 @@ export class EditClientePage implements OnInit {
             "cap": "${form.value.capSedeLegale}",
             "localita": "${form.value.localitaSedeLegale}",
             "comune": {
-              "id": ${comuneSedeLegale!.id},
-              "nome": "${comuneSedeLegale!.nome}",
+              "id": ${form.value.comuneSedeLegale!.id},
+              "nome": "${form.value.comuneSedeLegale!.nome}",
               "provincia": {
                   "id": ${provinciaSedeLegale!.id},
                   "nome": "${provinciaSedeLegale!.nome}",
