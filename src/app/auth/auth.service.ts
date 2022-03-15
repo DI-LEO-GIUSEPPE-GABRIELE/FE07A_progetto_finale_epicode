@@ -6,7 +6,6 @@ import { catchError, map, tap } from "rxjs/operators";
 import { environment } from "src/environments/environment";
 import { Utente } from "../models/utente";
 
-
 export interface AuthData {
   accessToken: string;
   user: {
