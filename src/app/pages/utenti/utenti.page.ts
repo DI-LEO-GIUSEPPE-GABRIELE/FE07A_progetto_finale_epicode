@@ -19,8 +19,6 @@ export class UtentiPage implements OnInit {
     this.utSrv
       .getUtenti(this.pagina)
       .subscribe((response) => (this.utenti = response.content));
-
-
   }
 
   cambiaPagina(param: string) {

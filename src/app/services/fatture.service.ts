@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { AuthData, AuthService } from 'src/app/auth/auth.service';
 import { environment } from 'src/environments/environment';
 import { Fattura } from 'src/app/models/fattura';
-import { take } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',

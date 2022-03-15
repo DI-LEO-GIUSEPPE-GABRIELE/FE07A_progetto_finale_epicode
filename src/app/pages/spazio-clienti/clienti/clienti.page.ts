@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from 'src/app/models/cliente';
 import { ClientiService } from '../../../services/clienti.service';
+
 @Component({
   templateUrl: './clienti.page.html',
   styleUrls: ['./clienti.page.scss'],
 })
+
 export class ClientiPage implements OnInit {
   clienti: Cliente[] | undefined;
   pagina = 0;

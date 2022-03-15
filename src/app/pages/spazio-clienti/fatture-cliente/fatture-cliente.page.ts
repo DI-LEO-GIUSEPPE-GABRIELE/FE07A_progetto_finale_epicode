@@ -4,10 +4,12 @@ import { Fattura } from 'src/app/models/fattura';
 import { FattureClienteService } from '../../../services/fatture-cliente.service';
 import { Subscription } from 'rxjs';
 import { FattureService } from '../../../services/fatture.service';
+
 @Component({
   templateUrl: './fatture-cliente.page.html',
   styleUrls: ['./fatture-cliente.page.scss'],
 })
+
 export class FattureClientePage implements OnInit {
   fatture!: Fattura[];
   sub!: Subscription;
@@ -19,8 +21,10 @@ export class FattureClientePage implements OnInit {
     private fatCliSrv: FattureClienteService,
     private fatSrv: FattureService
   ) {}
+
   pagina = 0;
   id!: number;
+
   ngOnInit(): void {
     this.sub = this.router.params.subscribe((params: Params) => {
       this.id = +parseInt(params['id']);

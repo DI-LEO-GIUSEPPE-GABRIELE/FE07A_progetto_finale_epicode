@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Cliente } from 'src/app/models/cliente';
 import { environment } from 'src/environments/environment';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -16,10 +17,8 @@ export class ClientiService {
     private authSrv: AuthService
   ) {}
 
-  getClienti(pagina:number) {
-    return this.http.get<any>(
-      `${this.URL}/api/clienti?page=${pagina}`
-    );
+  getClienti(pagina: number) {
+    return this.http.get<any>(`${this.URL}/api/clienti?page=${pagina}`);
   }
 
   removeCliente(clienteId: number) {
@@ -30,40 +29,44 @@ export class ClientiService {
     console.log(data);
     return this.http
       .post<Cliente>(`${this.URL}/api/clienti`, data)
-      .subscribe((res) => {
-        console.log(res);
-      });
+      .subscribe((res) => {});
   }
 
-  editCliente(data: Partial<Cliente>, id:number) {
+  editCliente(data: Partial<Cliente>, id: number) {
     return this.http
       .put<Cliente>(`${this.URL}/api/clienti/${id}`, data)
-      .subscribe((res) => {
-      });
+      .subscribe((res) => {});
   }
 
   getClientiFiltrati(filtro: string, valoreFiltro: string, pagina: number) {
-    if(filtro == "id"){ return this.http.get<any>(
-       `${this.URL}/api/clienti/${valoreFiltro}`
-     );} else { return this.http.get<any>(
-       `${this.URL}/api/clienti/${filtro}?nome=${valoreFiltro}`
-     );}
-   }
+    if (filtro == 'id') {
+      return this.http.get<any>(`${this.URL}/api/clienti/${valoreFiltro}`);
+    } else {
+      return this.http.get<any>(
+        `${this.URL}/api/clienti/${filtro}?nome=${valoreFiltro}`
+      );
+    }
+  }
 
-   getClientiFiltratiFatturato(filtro: string, valoreFiltro1: string, valoreFiltro2: string){
+  getClientiFiltratiFatturato(
+    filtro: string,
+    valoreFiltro1: string,
+    valoreFiltro2: string
+  ) {
     return this.http.get<any>(
-      `${this.URL}/api/clienti/${filtro}?from=${valoreFiltro1}&to=${valoreFiltro2}`);
-   }
+      `${this.URL}/api/clienti/${filtro}?from=${valoreFiltro1}&to=${valoreFiltro2}`
+    );
+  }
 
-   getComuni(){
+  getComuni() {
     return this.http.get<any>(
       `${this.URL}/api/comuni?page=0&size=20&sort=id,ASC`
     );
-   }
+  }
 
-   getProvince(){
+  getProvince() {
     return this.http.get<any>(
       `${this.URL}/api/province?page=0&size=20&sort=id,ASC`
     );
-   }
- }
+  }
+}

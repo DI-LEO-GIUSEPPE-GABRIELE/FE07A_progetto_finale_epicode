@@ -16,7 +16,6 @@ export class DettagliClienteService {
     private clSrv: ClientiService
   ) {}
 
-
   getCliente(idCliente: number) {
     return this.http.get<any>(
       `${this.URL}/api/clienti/${idCliente}`

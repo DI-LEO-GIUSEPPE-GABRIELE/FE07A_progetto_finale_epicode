@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
-import { Utente } from 'src/app/models/utente';
+
 @Component({
   templateUrl: './signup.page.html',
   styleUrls: ['./signup.page.scss'],

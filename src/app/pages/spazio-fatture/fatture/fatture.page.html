@@ -31,14 +31,11 @@
       <td>{{fattura?.importo}}</td>
       <td>{{fattura?.cliente?.ragioneSociale}}</td>
       <td>{{fattura?.stato?.nome}}</td>
-
-      <!--         <td><button class="btn btn-primary" [routerLink]="['/',fattura.id]">Nuova</button></td>-->
       <td><button class="btn btn-success" [routerLink]="['/edit-fattura', fattura.id]">Modifica</button></td>
       <td><button class="btn btn-danger" (click)="rimuoviFattura(fattura.id)">Elimina</button></td>
     </tr>
   </tbody>
 </table>
-
 
 <nav *ngIf="!booleanoFiltro" aria-label="Page navigation example">
   <ul class="pagination justify-content-center">
