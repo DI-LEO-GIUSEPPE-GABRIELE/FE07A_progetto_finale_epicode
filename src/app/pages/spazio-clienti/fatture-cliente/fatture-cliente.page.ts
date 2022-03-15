@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Fattura } from 'src/app/models/fattura';
-import { FattureClienteService } from '../../services/fatture-cliente.service';
+import { FattureClienteService } from '../../../services/fatture-cliente.service';
 import { Subscription } from 'rxjs';
-import { FattureService } from '../../services/fatture.service';
+import { FattureService } from '../../../services/fatture.service';
 @Component({
   templateUrl: './fatture-cliente.page.html',
   styleUrls: ['./fatture-cliente.page.scss'],

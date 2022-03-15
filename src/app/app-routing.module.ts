@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePage } from './pages/home/home.page';
 import { UtentiPage } from './pages/utenti/utenti.page';
-import { ClientiPage } from './pages/clienti/clienti.page';
-import { FatturePage } from './pages/fatture/fatture.page';
-import { DettagliFatturaPage } from './pages/dettagli-fattura/dettagli-fattura.page';
-import { FattureClientePage } from './pages/fatture-cliente/fatture-cliente.page';
+import { ClientiPage } from './pages/spazio-clienti/clienti/clienti.page';
+import { FatturePage } from './pages/spazio-fatture/fatture/fatture.page';
+import { DettagliFatturaPage } from './pages/spazio-fatture/dettagli-fattura/dettagli-fattura.page';
+import { FattureClientePage } from './pages/spazio-clienti/fatture-cliente/fatture-cliente.page';
 import { AuthGuard } from './auth/auth.guard';
-import { NuovoClientePage } from './pages/nuovo-cliente/nuovo-cliente.page';
-import { DettagliClientePage } from './pages/dettagli-cliente/dettagli-cliente.page';
-import { NuovaFatturaPage } from './pages/nuova-fattura/nuova-fattura.page';
-import { EditFatturaPage } from './pages/edit-fattura/edit-fattura.page';
-import { EditClientePage } from './pages/edit-cliente/edit-cliente.page';
+import { NuovoClientePage } from './pages/spazio-clienti/nuovo-cliente/nuovo-cliente.page';
+import { DettagliClientePage } from './pages/spazio-clienti/dettagli-cliente/dettagli-cliente.page';
+import { NuovaFatturaPage } from './pages/spazio-fatture/nuova-fattura/nuova-fattura.page';
+import { EditFatturaPage } from './pages/spazio-fatture/edit-fattura/edit-fattura.page';
+import { EditClientePage } from './pages/spazio-clienti/edit-cliente/edit-cliente.page';
 
 const routes: Routes = [
   {

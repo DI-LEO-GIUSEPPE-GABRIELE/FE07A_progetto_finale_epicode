@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { FattureService } from '../../services/fatture.service';
+import { FattureService } from '../../../services/fatture.service';
 import { Router } from '@angular/router';
 import { Fattura } from 'src/app/models/fattura';
 

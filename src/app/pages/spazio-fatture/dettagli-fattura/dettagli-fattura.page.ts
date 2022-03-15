@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Fattura } from 'src/app/models/fattura';
-import { DettagliFatturaService } from '../../services/dettagli-fattura.service';
+import { DettagliFatturaService } from '../../../services/dettagli-fattura.service';
 import { Subscription } from 'rxjs';
 import { Cliente } from 'src/app/models/cliente';
 

@@ -1,52 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 import { Cliente } from 'src/app/models/cliente';
-import { ClientiService } from '../../services/clienti.service';
-import { DettagliClienteService } from '../../services/dettagli-cliente.service';
+import { ClientiService } from '../../../services/clienti.service';
 import { Province } from 'src/app/models/province';
 import { Comuni } from 'src/app/models/comuni';
 
 @Component({
-  templateUrl: './edit-cliente.page.html',
-  styleUrls: ['./edit-cliente.page.scss']
+  templateUrl: './nuovo-cliente.page.html',
+  styleUrls: ['./nuovo-cliente.page.scss'],
 })
-export class EditClientePage implements OnInit {
-  cliente!: Cliente;
+export class NuovoClientePage implements OnInit {
   isLoading = false;
   errorMessage = undefined;
   authSrv: any;
-  sub!: Subscription;
   tipoClienti = [];
   province: Province[] | undefined;
   comuni: Comuni[] | undefined;
 
-  constructor(private clSrv: ClientiService, private detClSrv: DettagliClienteService, private router: Router, private actRoute: ActivatedRoute) {}
+  constructor(private clSrv: ClientiService, private router: Router) {}
 
   ngOnInit(): void {
-      this.sub = this.actRoute.params.subscribe((params: Params) => {
-        const id = +parseInt(params['id']);
-        this.detClSrv.getCliente(id).subscribe(res => {
-          this.cliente = res;
-        });
-      });
-      setTimeout(() => {
-        this.clSrv.getComuni().subscribe((res) => {
-          this.comuni = res.content;
-        });
-        this.clSrv.getProvince().subscribe((res) => {
-          this.province = res.content;
-        });
-      }, 2000);
+    this.clSrv.getComuni().subscribe((res) => {
+      this.comuni = res.content;
+    });
+    this.clSrv.getProvince().subscribe((res) => {
+      this.province = res.content;
+    });
   }
-
-  async onsubmit(form: NgForm, id:number) {
+  async onsubmit(form: NgForm) {
     this.isLoading = true;
-    let comuneSedeOperativa!: Comuni;
-    let comuneSedeLegale!: Comuni;
-    let provinciaSedeOperativa!: Province;
-    let provinciaSedeLegale!: Province;
+    let comuneSedeOperativa: Comuni;
+    let comuneSedeLegale: Comuni;
+    let provinciaSedeOperativa: Province;
+    let provinciaSedeLegale: Province;
 
     for (let i of this.comuni!) {
       if (form.value.comuneSedeLegale == i.nome) {
@@ -111,12 +98,13 @@ export class EditClientePage implements OnInit {
         "dataUltimoContatto": "2021-03-24T21:32:06.375+00:00"
     }`);
     try {
-      this.clSrv.editCliente(nuovoCliente, this.cliente.id);
+      await this.clSrv.nuovoCliente(nuovoCliente);
+      console.log(form.value);
       form.reset();
       this.isLoading = false;
       this.errorMessage = undefined;
-        alert('Cliente modificato correttamente!');
-        this.router.navigate(['/clienti']);
+      alert('Nuovo Cliente inserito correttamente!');
+      this.router.navigate(['/clienti']);
     } catch (error: any) {
       this.isLoading = false;
       this.errorMessage = error;
