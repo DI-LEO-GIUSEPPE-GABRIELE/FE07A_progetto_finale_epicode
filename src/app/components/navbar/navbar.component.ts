@@ -9,7 +9,7 @@ import { Utente } from 'src/app/models/utente';
 })
 export class NavbarComponent implements OnInit {
   isLoggedIn: boolean = false;
-  welcomeUser!: string | undefined;
+  welcomeUser: any;
 
   constructor(private authSrv: AuthService) {}
 
@@ -18,11 +18,16 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.authSrv.isLoggedIn$.subscribe((isLoggedIn) => {
-      this.isLoggedIn = isLoggedIn;
-    });
-    this.authSrv.user$.subscribe((data) => {
-      this.welcomeUser = data?.user.username;
-    })
+    // this.authSrv.user$.subscribe((data) => {
+    //   this.welcomeUser = data?.user.username;
+    // })
+
+      this.authSrv.isLoggedIn$.subscribe((isLoggedIn) => {
+        this.isLoggedIn = isLoggedIn;
+        setTimeout(() => {
+          this.welcomeUser = JSON.parse(localStorage.getItem('user')!);
+          console.log(this.welcomeUser.username);
+        }, 200);
+      });
   }
 }
