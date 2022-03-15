@@ -6,7 +6,6 @@ import { catchError, map, tap } from "rxjs/operators";
 import { environment } from "src/environments/environment";
 import { Utente } from "../models/utente";
 
-
 export interface AuthData {
   accessToken: string;
   user: {
@@ -20,6 +19,7 @@ export interface AuthData {
 @Injectable({
   providedIn: "root",
 })
+
 export class AuthService {
   URL = environment.pathApi;
 
@@ -40,10 +40,7 @@ export class AuthService {
       }),
       tap((data) => {
         this.authSubject.next(data);
-
         localStorage.setItem('user',JSON.stringify(data))
-        // const expirationDate = this.jwtHelper.getTokenExpirationDate(data.accessToken) as Date
-        // this.autoLogout(expirationDate)
       }),
       catchError(this.errors)
     );
@@ -55,27 +52,14 @@ export class AuthService {
       return
     }
     const user:AuthData = JSON.parse(userJson)
-    // if (this.jwtHelper.isTokenExpired(user.accessToken)) {
-     // return
-    //}
     this.authSubject.next(user)
-    // const expirationDate = this.jwtHelper.getTokenExpirationDate(user.accessToken) as Date
-    // this.autoLogout(expirationDate)
   }
-
-  // signup(data: SignupData) {
-  //   return this.http
-  //     .post(`${this.URL}/api/auth/signup`, data)
-  //     .pipe(catchError(this.errors));
-  // }
 
   signup(data: Utente) {
     return this.http.post(`${this.URL}/api/auth/signup`, data).subscribe(res=> {
       console.log(res);
     })
   }
-
-
 
   logout(){
     this.authSubject.next(null)

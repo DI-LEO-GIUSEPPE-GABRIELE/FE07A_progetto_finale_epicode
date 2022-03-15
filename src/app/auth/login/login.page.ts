@@ -11,9 +11,7 @@ export class LoginPage implements OnInit {
   errorMessage = undefined
   constructor(private authSrv:AuthService,private router:Router) {}
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   async onSubmit(form:any){
     try {

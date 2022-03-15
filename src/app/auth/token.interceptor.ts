@@ -21,9 +21,6 @@ export class TokenInterceptor implements HttpInterceptor {
     return this.authSrv.user$.pipe(
       take(1),
       switchMap((user) => {
-        // if (!user) {
-        //   return next.handle(request);
-        // }
         const newReq: HttpRequest<any> = request.clone({
           headers: request.headers
             .set(
@@ -33,7 +30,6 @@ export class TokenInterceptor implements HttpInterceptor {
             )
             .set('X-TENANT-ID', 'fe_0721a'),
         });
-
         return next.handle(newReq);
       })
     );
