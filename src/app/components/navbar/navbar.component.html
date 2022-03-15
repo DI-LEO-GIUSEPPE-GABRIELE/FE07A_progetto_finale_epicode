@@ -65,7 +65,7 @@
           </li>
         </ul>
         <div *ngIf="isLoggedIn">
-          <p class="d-inline username-welc-back">Bentornato <span class="fst-italic fw-bolder">{{welcomeUser.username}}</span></p>
+          <p class="d-inline username-welc-back">Bentornato <span *ngIf="welcomeUser" class="fst-italic fw-bolder">{{welcomeUser.username}}</span></p>
           <button class="btn btn-danger mx-3" (click)="onLogout()">logout</button>
         </div>
       </div>

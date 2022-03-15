@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
-import { Utente } from 'src/app/models/utente';
 
 @Component({
   selector: 'app-navbar',
@@ -17,17 +16,12 @@ export class NavbarComponent implements OnInit {
     this.authSrv.logout();
   }
 
-  ngOnInit(): void {
-    // this.authSrv.user$.subscribe((data) => {
-    //   this.welcomeUser = data?.user.username;
-    // })
-
-      this.authSrv.isLoggedIn$.subscribe((isLoggedIn) => {
-        this.isLoggedIn = isLoggedIn;
-        setTimeout(() => {
-          this.welcomeUser = JSON.parse(localStorage.getItem('user')!);
-          console.log(this.welcomeUser.username);
-        }, 200);
-      });
+  async ngOnInit() {
+    this.authSrv.isLoggedIn$.subscribe((isLoggedIn) => {
+      setTimeout(() => {
+        this.welcomeUser = JSON.parse(localStorage.getItem('user')!);
+      }, 200);
+      this.isLoggedIn = isLoggedIn;
+    });
   }
 }

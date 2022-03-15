@@ -6,6 +6,7 @@ import { catchError, map, tap } from "rxjs/operators";
 import { environment } from "src/environments/environment";
 import { Utente } from "../models/utente";
 
+
 export interface AuthData {
   accessToken: string;
   user: {
@@ -25,7 +26,7 @@ export class AuthService {
   private authSubject = new BehaviorSubject<null|AuthData>(null);
   user$ = this.authSubject.asObservable();
   isLoggedIn$ = this.user$.pipe(map(user=>!!user));
-  autologoutTimer:any
+  autologoutTimer:any;
 
   constructor(private http: HttpClient, private router:Router) {
     this.restoreUser()
@@ -37,7 +38,7 @@ export class AuthService {
       }),
       tap((data) => {
         this.authSubject.next(data);
-        localStorage.setItem('user',JSON.stringify(data))
+        localStorage.setItem('user',JSON.stringify(data));
       }),
       catchError(this.errors)
     );
@@ -88,7 +89,6 @@ export class AuthService {
       case "Cannot find user":
         return throwError("Utente non esiste");
         break;
-
       default:
         return throwError("Errore nella chiamata");
         break;
