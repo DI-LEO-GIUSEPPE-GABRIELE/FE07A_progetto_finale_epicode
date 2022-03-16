@@ -9,6 +9,7 @@ import { AuthService } from '../auth.service';
 export class LoginPage implements OnInit {
   isLoading = false;
   errorMessage = undefined;
+
   constructor(private authSrv: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
