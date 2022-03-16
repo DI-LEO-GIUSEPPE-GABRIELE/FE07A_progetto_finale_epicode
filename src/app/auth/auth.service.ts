@@ -60,7 +60,7 @@ export class AuthService {
 
   logout(){
     this.authSubject.next(null)
-    this.router.navigate(["/login"])
+    this.router.navigate([""])
     localStorage.removeItem('user')
     if (this.autologoutTimer) {
       clearTimeout(this.autologoutTimer)

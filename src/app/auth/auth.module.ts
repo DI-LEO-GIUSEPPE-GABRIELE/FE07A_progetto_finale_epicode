@@ -15,7 +15,7 @@ import { SignupPage } from './signup/signup.page';
     HttpClientModule,
     RouterModule.forChild([
       {
-        path: 'login',
+        path: '',
         component: LoginPage,
       },
       {

@@ -30,7 +30,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
         if (isLoggedin) {
           return true;
         }
-        return this.router.createUrlTree(["/login"]);
+        return this.router.createUrlTree([""]);
       })
     );
   }

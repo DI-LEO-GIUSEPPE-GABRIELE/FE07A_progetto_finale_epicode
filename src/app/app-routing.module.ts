@@ -12,12 +12,9 @@ import { DettagliClientePage } from './pages/spazio-clienti/dettagli-cliente/det
 import { NuovaFatturaPage } from './pages/spazio-fatture/nuova-fattura/nuova-fattura.page';
 import { EditFatturaPage } from './pages/spazio-fatture/edit-fattura/edit-fattura.page';
 import { EditClientePage } from './pages/spazio-clienti/edit-cliente/edit-cliente.page';
+import { LoginPage } from './auth/login/login.page';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomePage,
-  },
   {
     canActivate: [AuthGuard],
     path: 'utenti',

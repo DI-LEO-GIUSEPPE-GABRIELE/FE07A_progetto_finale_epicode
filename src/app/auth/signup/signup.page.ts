@@ -23,7 +23,7 @@ export class SignupPage implements OnInit {
       this.isLoading = false;
       this.errorMessage = undefined;
       alert('Nuovo User registrato correttamente!');
-      this.router.navigate(['/login']);
+      this.router.navigate(['']);
     } catch (error: any) {
       this.isLoading = false;
       this.errorMessage = error;
