@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePage } from './pages/home/home.page';
 import { UtentiPage } from './pages/utenti/utenti.page';
 import { ClientiPage } from './pages/spazio-clienti/clienti/clienti.page';
 import { FatturePage } from './pages/spazio-fatture/fatture/fatture.page';

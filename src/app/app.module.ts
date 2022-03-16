@@ -7,7 +7,6 @@ import { AuthModule } from './auth/auth.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './auth/token.interceptor';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { HomePage } from './pages/home/home.page';
 import { UtentiPage } from './pages/utenti/utenti.page';
 import { ClientiPage } from './pages/spazio-clienti/clienti/clienti.page';
 import { FatturePage } from './pages/spazio-fatture/fatture/fatture.page';
@@ -23,7 +22,6 @@ import { EditClientePage } from './pages/spazio-clienti/edit-cliente/edit-client
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomePage,
     UtentiPage,
     ClientiPage,
     FatturePage,
