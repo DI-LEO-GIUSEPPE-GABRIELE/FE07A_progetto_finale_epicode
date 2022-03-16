@@ -21,6 +21,10 @@ export class ClientiService {
     return this.http.get<any>(`${this.URL}/api/clienti?page=${pagina}`);
   }
 
+  eliminaFattureCLiente(id: number) {
+    return this.http.delete<any>(`${this.URL}/api/fatture/cliente/${id}`)
+  }
+
   removeCliente(clienteId: number) {
     this.http.delete(`${this.URL}/api/clienti/${clienteId}`).subscribe();
   }
@@ -67,6 +71,12 @@ export class ClientiService {
   getProvince() {
     return this.http.get<any>(
       `${this.URL}/api/province?page=0&size=20&sort=id,ASC`
+    );
+  }
+
+  getAllFattureCliente(id: number) {
+    return this.http.get<any>(
+      `${this.URL}/api/fatture/cliente/${id}?page=0&size=10000&sort=id,ASC`
     );
   }
 }
