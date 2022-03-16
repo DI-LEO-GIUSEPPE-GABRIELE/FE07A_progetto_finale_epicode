@@ -1,0 +1,33 @@
+#contenitore {
+  background-color: white;
+  border-radius: 2em;
+}
+
+#scatola {
+  padding: 2em;
+  background-color: black;
+  height: 100%;
+}
+
+#scatola div:first-child button {
+  background-color: #DE1769;
+}
+
+.filtro input {
+  height: 2.5em;
+}
+
+#filtro {
+  width: 10em;
+}
+
+.filtro button {
+  border-radius: 0%;
+}
+
+.filtro select {
+  height: 2.3em;
+  cursor: pointer;
+  border: 3px solid #DE1769;
+}
+
