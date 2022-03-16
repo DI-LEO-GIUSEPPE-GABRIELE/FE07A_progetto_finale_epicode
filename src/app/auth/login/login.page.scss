@@ -4,10 +4,15 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #ffffff99;
+  background-color: #ffffff6c;
   border: 2px solid lightgray;
   height: 100%;
   width: 33%;
+  font-size: 1.1em;
+}
+
+button {
+  width: 30%;
 }
 
 .row {
@@ -15,8 +20,8 @@
 }
 
 img {
-  margin-top: -10em;
-  margin-bottom: -20em;
+  margin-top: -5em;
+  margin-bottom: -18em;
 }
 
 form input {
@@ -27,6 +32,15 @@ form input {
   border-bottom: 1px solid white;
 }
 
+form input:hover {
+  cursor:pointer;
+}
+
 form input::placeholder{
   color: white;
 }
+
+a {
+  text-decoration: none;
+}
+
