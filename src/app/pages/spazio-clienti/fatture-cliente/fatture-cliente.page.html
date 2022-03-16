@@ -39,7 +39,7 @@
         <tr *ngFor="let fattura of fatture; let i = index">
           <td>{{fattura.id}}</td>
           <td>{{fattura.anno}}</td>
-          <td>{{fattura.importo}}</td>
+          <td>€ {{fattura.importo}}</td>
           <td *ngIf="fattura?.stato?.nome == 'PAGATA'">{{fattura?.stato?.nome}} ✅</td>
           <td *ngIf="fattura?.stato?.nome == 'NON PAGATA'">{{fattura?.stato?.nome}} ❌</td>
           <td>
