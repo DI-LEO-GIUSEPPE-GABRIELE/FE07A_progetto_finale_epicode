@@ -4,34 +4,29 @@
         {{errorMessage}}
       </div>
       <form #form="ngForm" (ngSubmit)="onsubmit(form)">
-        <div class="form-group mb-2">
-          <label for="username">Username</label>
-          <input ngModel name="username" class="form-control" type="text" id="username" required/>
+        <div class="form-group mb-3">
+          <input ngModel name="username" class="form-control" type="text" id="username" required placeholder="Username"/>
         </div>
-        <div class="form-group mb-2">
-          <label for="nome">Nome</label>
-          <input ngModel name="nome" class="form-control" type="text" id="nome" required/>
+        <div class="form-group mb-3">
+          <input ngModel name="nome" class="form-control" type="text" id="nome" required placeholder="Nome"/>
         </div>
-        <div class="form-group mb-2">
-          <label for="cognome">Cognome</label>
-          <input ngModel name="cognome" class="form-control" type="text" id="cognome" required/>
+        <div class="form-group mb-3">
+          <input ngModel name="cognome" class="form-control" type="text" id="cognome" required placeholder="Cognome"/>
         </div>
-        <div class="form-group mb-2">
-          <label for="email">Email</label>
-          <input ngModel name="email" class="form-control" type="email" id="email" required/>
+        <div class="form-group mb-3">
+          <input ngModel name="email" class="form-control" type="email" id="email" required placeholder="Email"/>
         </div>
-        <div class="form-group mb-2">
-          <label for="password">Password</label>
-          <input ngModel name="password" class="form-control" type="password" id="pass" required/>
+        <div class="form-group mb-3">
+          <input ngModel name="password" class="form-control" type="password" id="pass" required placeholder="Password"/>
         </div>
-        <div class="form-group mb-2">
+        <div class="form-group mb-3">
           <h4>Tipo di utente:</h4>
           <select ngModel name="roles" id="roles" required>
-            <option value="ROLE_ADMIN">ADMIN</option>
+            <option value="ROLE_USER">USER</option>
           </select>
         </div>
-        <button class="btn btn-primary mt-3 mb-3" [disabled]="form.invalid" [disabled]="isLoading" type="submit">
-          Registrati
+        <button class="btn btn-primary mb-3" [disabled]="form.invalid" [disabled]="isLoading" type="submit">
+          Registrati 🗝️
           <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
         </button>
       </form>
