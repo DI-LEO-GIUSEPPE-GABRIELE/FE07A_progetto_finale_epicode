@@ -49,11 +49,8 @@ export class FattureClientePage implements OnInit {
     this.onGetFattureCliente(this.id);
   }
 
-  rimuoviFattura(idFattura: number) {
-    this.fatCliSrv.rimuoviFattura(idFattura);
-    setTimeout(() => {
-      this.onGetFattureCliente(this.id);
-    }, 200);
+  rimuoviFattura(fattura: Fattura) {
+    this.fatSrv.removeFattura(fattura).subscribe(response => {this.onGetFattureCliente(this.id)})
   }
 
   filtra() {
