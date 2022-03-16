@@ -1,5 +1,6 @@
-<div class="p-5">
-  <table class="table">
+<div id="scatola">
+  <div id="contenitore" class="p-2">
+    <table class="table table-hover">
       <thead>
         <tr>
           <th scope="col">Id</th>
@@ -10,27 +11,37 @@
       </thead>
       <tbody>
         <tr *ngFor="let utente of utenti;">
-           <td>{{utente.id}}</td>
+          <td>{{utente.id}}</td>
           <td>{{utente.username}}</td>
           <td>{{utente.email}}</td>
           <td>{{utente.roles[0].roleName}}</td>
-         </tr>
+        </tr>
       </tbody>
     </table>
     <nav aria-label="Page navigation example">
       <ul class="pagination justify-content-center">
         <li class="page-item">
-          <a class="page-link" style="cursor: pointer;" (click)="cambiaPagina('-')" aria-label="Previous">
+          <a
+            class="page-link"
+            style="cursor: pointer"
+            (click)="cambiaPagina('-')"
+            aria-label="Previous"
+          >
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
         <li class="page-item"><a class="page-link">{{pagina}}</a></li>
         <li class="page-item">
-          <a class="page-link" style="cursor: pointer;" (click)="cambiaPagina('+')" aria-label="Next">
+          <a
+            class="page-link"
+            style="cursor: pointer"
+            (click)="cambiaPagina('+')"
+            aria-label="Next"
+          >
             <span aria-hidden="true">&raquo;</span>
           </a>
         </li>
       </ul>
     </nav>
+  </div>
 </div>
-
