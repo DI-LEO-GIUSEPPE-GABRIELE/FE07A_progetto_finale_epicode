@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { UtentiPage } from './pages/utenti/utenti.page';
 import { ClientiPage } from './pages/spazio-clienti/clienti/clienti.page';
 import { FatturePage } from './pages/spazio-fatture/fatture/fatture.page';
-import { DettagliFatturaPage } from './pages/spazio-fatture/dettagli-fattura/dettagli-fattura.page';
 import { FattureClientePage } from './pages/spazio-clienti/fatture-cliente/fatture-cliente.page';
 import { AuthGuard } from './auth/auth.guard';
 import { NuovoClientePage } from './pages/spazio-clienti/nuovo-cliente/nuovo-cliente.page';
@@ -28,11 +27,6 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     path: 'fatture',
     component: FatturePage,
-  },
-  {
-    canActivate: [AuthGuard],
-    path: 'dettagli-fattura/:id',
-    component: DettagliFatturaPage,
   },
   {
     canActivate: [AuthGuard],

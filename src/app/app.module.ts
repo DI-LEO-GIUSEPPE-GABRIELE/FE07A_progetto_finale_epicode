@@ -10,7 +10,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { UtentiPage } from './pages/utenti/utenti.page';
 import { ClientiPage } from './pages/spazio-clienti/clienti/clienti.page';
 import { FatturePage } from './pages/spazio-fatture/fatture/fatture.page';
-import { DettagliFatturaPage } from './pages/spazio-fatture/dettagli-fattura/dettagli-fattura.page';
 import { NuovoClientePage } from './pages/spazio-clienti/nuovo-cliente/nuovo-cliente.page';
 import { FattureClientePage } from './pages/spazio-clienti/fatture-cliente/fatture-cliente.page';
 import { DettagliClientePage } from './pages/spazio-clienti/dettagli-cliente/dettagli-cliente.page';
@@ -25,7 +24,6 @@ import { EditClientePage } from './pages/spazio-clienti/edit-cliente/edit-client
     UtentiPage,
     ClientiPage,
     FatturePage,
-    DettagliFatturaPage,
     NuovoClientePage,
     FattureClientePage,
     DettagliClientePage,
