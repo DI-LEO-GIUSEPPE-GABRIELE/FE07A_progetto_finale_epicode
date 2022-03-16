@@ -7,3 +7,21 @@
   padding: 2em;
   background-color: black;
 }
+
+#scatola div:first-child button {
+  background-color: #DE1769;
+}
+
+.filtro input {
+  height: 2.5em;
+}
+
+.filtro button {
+  border-radius: 0%;
+}
+
+.filtro select {
+  height: 2.3em;
+  cursor: pointer;
+  border: 3px solid #DE1769;
+}
