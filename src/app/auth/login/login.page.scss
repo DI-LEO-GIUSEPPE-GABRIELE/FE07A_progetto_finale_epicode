@@ -1,4 +1,32 @@
 .container {
-  border: 1px solid black;
-  width: 30em;
+  color: white;
+  padding: 2em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffffff99;
+  border: 2px solid lightgray;
+  height: 100%;
+  width: 33%;
+}
+
+.row {
+  height: 100%;
+}
+
+img {
+  margin-top: -10em;
+  margin-bottom: -20em;
+}
+
+form input {
+  background-color: transparent;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid white;
+}
+
+form input::placeholder{
+  color: white;
 }
