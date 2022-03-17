@@ -30,4 +30,14 @@ export class SignupPage implements OnInit {
       console.error(error);
     }
   }
+
+  typepsw = 'password'
+
+  showpsw() {
+    if (this.typepsw == 'password') {
+      this.typepsw = 'text'
+    } else {
+      this.typepsw = 'password'
+    }
+  }
 }
