@@ -52,8 +52,9 @@ export class AuthService {
     this.authSubject.next(user)
   }
 
-  signup(data: Utente) {
-    return this.http.post(`${this.URL}/api/auth/signup`, data).subscribe(res=> {
+  signup(data: {username:any; email:any; password:any; nome:any; cognome:any; roles:any}) {
+    let utenteReg = {username:data.username, email:data.email, password:data.password, nome:data.nome, cognome:data.cognome, role:[data.roles]}
+    return this.http.post(`${this.URL}/api/auth/signup`, utenteReg).subscribe(res=> {
       console.log(res);
     })
   }

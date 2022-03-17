@@ -8,7 +8,7 @@ export interface Utente {
   roles: [
     {
       id: number;
-      roleName: 'ROLE_ADMIN';
+      roleName: string;
     }
   ];
 }
