@@ -1,4 +1,41 @@
-.container {
-  border: 1px solid black;
+#contenitore {
+  background-color: white;
+  border-radius: 2em;
   width: 30em;
+  height: 40em;
+}
+
+#scatola {
+  padding: 2em;
+  background-color: black;
+  height: 100%;
+}
+
+label {
+  position: relative;
+  color: rgb(44, 44, 44);
+  background-color: white;
+  font-size: 0.7em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+label:nth-child(1){
+  top: 1em;
+  right: -2em;
+  border-radius: 1em;
+}
+
+#stato {
+  font-size: 1em;
+  position: static;
+}
+
+input {
+  box-shadow: 0px 4px 12px -1px #00000041;
+}
+
+h3 {
+  font-weight: bold;
+  font-style: italic;
 }
