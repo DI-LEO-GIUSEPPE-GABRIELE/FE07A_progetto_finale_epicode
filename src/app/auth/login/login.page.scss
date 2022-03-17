@@ -4,7 +4,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #ffffff6c;
+  background-color: #565656bd;
   border: 2px solid lightgray;
   height: 100%;
   width: 33%;
@@ -41,7 +41,12 @@ form input::placeholder{
 }
 
 a {
+  color:#7ed4a7;
   text-decoration: none;
+}
+
+a:hover{
+  color:#4dce8b;
 }
 
 #occhio:hover {
