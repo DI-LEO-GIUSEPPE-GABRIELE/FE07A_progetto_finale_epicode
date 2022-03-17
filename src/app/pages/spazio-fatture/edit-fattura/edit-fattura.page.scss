@@ -1,51 +1,32 @@
-.container-fluid {
-  color: white;
+#contenitore {
+  background-color: white;
+  border-radius: 2em;
+  width: 30em;
+  height: 37em;
+}
+
+#scatola {
   padding: 2em;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #ffffff6c;
-  border: 2px solid lightgray;
+  background-color: black;
   height: 100%;
-  width: 100%;
-  font-size: 1.1em;
 }
 
-button {
-  width: 30%;
+label {
+  position: relative;
+  color: rgb(44, 44, 44);
+background-color: white;
+  font-size: 0.7em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
-.row {
-  height: 100%;
-  width: 33%;
+label:nth-child(1){
+  top: 1em;
+  right: 12em;
+  border-radius: 1em;
 }
 
-img {
-  margin-top: -5em;
-  margin-bottom: -18em;
-}
-
-form {
-  margin-left: 215%;
-}
-
-form input {
-  color: white;
-  background-color: transparent;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  border-bottom: 1px solid white;
-}
-
-form input:hover {
-  cursor:pointer;
-}
-
-form input::placeholder{
-  color: white;
-}
-
-a {
-  text-decoration: none;
+#stato {
+  font-size: 1em;
+  position: static;
 }
