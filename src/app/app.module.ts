@@ -16,6 +16,7 @@ import { DettagliClientePage } from './pages/spazio-clienti/dettagli-cliente/det
 import { NuovaFatturaPage } from './pages/spazio-fatture/nuova-fattura/nuova-fattura.page';
 import { EditFatturaPage } from './pages/spazio-fatture/edit-fattura/edit-fattura.page';
 import { EditClientePage } from './pages/spazio-clienti/edit-cliente/edit-cliente.page';
+import { HomePage } from './pages/home/home.page';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { EditClientePage } from './pages/spazio-clienti/edit-cliente/edit-client
     DettagliClientePage,
     NuovaFatturaPage,
     EditFatturaPage,
-    EditClientePage
+    EditClientePage,
+    HomePage
   ],
   imports: [
     BrowserModule,

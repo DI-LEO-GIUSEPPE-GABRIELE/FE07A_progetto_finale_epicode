@@ -10,7 +10,7 @@ import { DettagliClientePage } from './pages/spazio-clienti/dettagli-cliente/det
 import { NuovaFatturaPage } from './pages/spazio-fatture/nuova-fattura/nuova-fattura.page';
 import { EditFatturaPage } from './pages/spazio-fatture/edit-fattura/edit-fattura.page';
 import { EditClientePage } from './pages/spazio-clienti/edit-cliente/edit-cliente.page';
-import { LoginPage } from './auth/login/login.page';
+import { HomePage } from './pages/home/home.page';
 
 const routes: Routes = [
   {
@@ -27,6 +27,11 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     path: 'fatture',
     component: FatturePage,
+  },
+  {
+    canActivate: [AuthGuard],
+    path: 'home',
+    component: HomePage,
   },
   {
     canActivate: [AuthGuard],

@@ -19,7 +19,7 @@ export class LoginPage implements OnInit {
       await this.authSrv.login(form.value).toPromise();
       form.reset();
       this.errorMessage = undefined;
-      this.router.navigate(['/utenti']);
+      this.router.navigate(['/home']);
     } catch (error: any) {
       this.errorMessage = error;
       console.error(error);

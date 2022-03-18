@@ -1,0 +1,51 @@
+<div id="scatola">
+  <div class="container two">
+    <div class="row align-content-center justify-content-between">
+      <div id="h1" class="text-center mb-5">
+        <h1 class="mb-5">Jimbo CRM</h1>
+        <p class="h3">Questo Freemium Software è interamente realizzato con Angular CLI in collaborazione con Epicode Italia.
+          Per qualsiasi info riguardo il gestionale o le sue funzioni <a href="mailto:giuseppegabrieledileo95@gmail.com">Scrivimi una mail</a> o <a target="_blank" href="https://giuseppegabrieledileo.site/">visita</a> il mio web space.
+        </p>
+      </div>
+      <div class="col-md-3">
+        <div id="card-1" class="card text-center rounded" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-img-top mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+              <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/>
+              <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+            </svg></h5>
+            <h5 class="card-title">Gestione Utenti</h5>
+            <p class="card-text">Questa sezione vi permette di tenere sotto controllo la lista degli utenti, le loro info e i loro ruoli.</p>
+            <button [routerLink]="['/utenti']" class="btn btn-primary">Vai allo spazio dedicato</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div id="card-2" class="card text-center rounded" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-img-top"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+              <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+              <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+              <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+            </svg></h5>
+            <h5 class="card-title">Gestione Clienti</h5>
+            <p class="card-text">Questa sezione vi permette di tenere sotto controllo la lista dei clienti e delle relative fatture personali.</p>
+            <button [routerLink]="['/clienti']" class="btn btn-primary">Vai allo spazio dedicato</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div id="card-3" class="card text-center rounded" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-img-top"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-file-earmark-text-fill" viewBox="0 0 16 16">
+              <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1h-4z"/>
+            </svg></h5>
+            <h5 class="card-title">Gestione Fatture</h5>
+            <p class="card-text">Questa sezione vi permette di tenere sotto controllo la lista di tutte le fatture con funzionalità di modifica.</p>
+            <button [routerLink]="['/fatture']" class="btn btn-primary">Vai allo spazio dedicato</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
