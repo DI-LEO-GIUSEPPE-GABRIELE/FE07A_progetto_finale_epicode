@@ -15,6 +15,11 @@ import { HomePage } from './pages/home/home.page';
 const routes: Routes = [
   {
     canActivate: [AuthGuard],
+    path: 'home',
+    component: HomePage,
+  },
+  {
+    canActivate: [AuthGuard],
     path: 'utenti',
     component: UtentiPage,
   },
@@ -27,11 +32,6 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     path: 'fatture',
     component: FatturePage,
-  },
-  {
-    canActivate: [AuthGuard],
-    path: 'home',
-    component: HomePage,
   },
   {
     canActivate: [AuthGuard],
