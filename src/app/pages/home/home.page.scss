@@ -6,17 +6,15 @@
 h1 {
   font-style: italic;
   font-weight: bold;
-  text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
 }
 
 a {
-  color:#d7fbe8;
+  color:#528b6c;
   text-decoration: none;
-  text-shadow: 4px 4px 2px rgb(117, 117, 117);
 }
 
 a:hover{
-  color:#ffffff;
+  color:#a8ffaf;
 }
 
 .row {
@@ -25,6 +23,12 @@ a:hover{
 
 #h1{
   z-index: 100;
+}
+
+img {
+  width: 50em;
+  margin-top: -15em;
+  margin-bottom: -5em;
 }
 
 .card{
