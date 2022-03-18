@@ -1,6 +1,6 @@
 <nav *ngIf="isLoggedIn" class="navbar navbar-expand navbar-dark bg-dark text-white">
     <div class="container-fluid">
-      <a class="navbar-brand"><img class="img-fluid" src="assets/img/logo-tagliato.png" alt="logo"></a>
+      <a [routerLink]="['/home']" class="navbar-brand"><img class="img-fluid" src="assets/img/logo-tagliato.png" alt="logo"></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -37,6 +37,7 @@
               class="nav-link"
               [routerLink]="['/home']"
               routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
               >Home</a
             >
           </li>
